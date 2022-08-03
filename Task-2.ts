@@ -28,6 +28,11 @@ function Reverse(array: number[]) {
 function Square(array: number[]) {
     return array.map(value => value * value);
 }
+function OutputInConsole(array: number[]) {
+    console.log(array);
+
+    return array;
+}
 
 function NumberToArrayDigit(a: number): number[] {
     const array: number[] = [];
@@ -40,11 +45,13 @@ function NumberToArrayDigit(a: number): number[] {
 }
 
 
+
 function IsIntersection(a: number, b: number): boolean {
-    const argA = NumberToArrayDigit(a);
-    const argB = NumberToArrayDigit(b);
+    const argA = NumberToArrayDigit(Math.abs(a));
+    const argB = NumberToArrayDigit(Math.abs(b));
     return argA.some((a) => argB.includes(a));
 }
+
 
 
 
@@ -80,8 +87,9 @@ function main(array: number[]) {
     return Compare(
         Sort,
         Coincidences,
+        OutputInConsole,
         ExitCondition(
-           preLength,
+            preLength,
             Compare(
                 Reverse,
                 Square,
@@ -91,6 +99,5 @@ function main(array: number[]) {
     )(array)
 }
 
-console.log(main([41, 55, 61, 1, 8, 27, 37, 39]));
-
-
+main([41, 55, 61, 1, 8, 27, 37, 39]);
+main([-41, 55, 61, 1, 8, -27, 37, 39]);
