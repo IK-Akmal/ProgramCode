@@ -80,12 +80,13 @@ function main(array: number[]) {
     return Compare(
         Sort,
         Coincidences,
-        ExitCondition(preLength, (arr) =>
+        ExitCondition(
+           preLength,
             Compare(
                 Reverse,
                 Square,
                 main
-            )(arr)
+            )
         )
     )(array)
 }
