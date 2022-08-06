@@ -55,7 +55,7 @@ function IsIntersection(a: number, b: number): boolean {
 
 
 
-function Coincidences(array: number[]) {
+function RemoveMatchingElements(array: number[]) {
     const deleteIndexs = new Map<number, number>();
     let flag = false;
     for (let i = 0; i < array.length - 1; i++) {
@@ -86,7 +86,7 @@ function main(array: number[]) {
     const preLength = array.length
     return Compare(
         Sort,
-        Coincidences,
+        RemoveMatchingElements,
         OutputInConsole,
         ExitCondition(
             preLength,
